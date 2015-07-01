@@ -15,6 +15,10 @@ function ExpressHandler(req, res) {
 // After binding, fn can use `this.req` and `this.res` to visit
 // original req and res objects.
 ExpressHandler.prototype.next = function(fn) {
+    if (typeof fn !== "function") {
+        return function() {};
+    }
+
     var self = this;
     return function() {
         fn.apply(self, arguments);
