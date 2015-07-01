@@ -2,6 +2,7 @@
 //
 // Copyright (c) Huan Du (http://huandu.me/+). All rights reserved.
 // Licensed under a Creative Commons Attribution 3.0 Unported License.
+
 #include <string>
 
 #define SAMPLE_NS_BEGIN namespace sample {
@@ -14,15 +15,16 @@ class HelloWorld
     typedef ::std::string String;
 
 private:
-    int32_t worldNumber_;
-    String text_;
+    int32_t _worldNumber;
+    String _text;
 
 public:
     HelloWorld()
-    : worldNumber_(1)
+    : _worldNumber(1)
     {}
 
 public:
+    // property `text`.
     void text(const String &str);
     const String & text() const;
 

@@ -2,6 +2,7 @@
 //
 // Copyright (c) Huan Du (http://huandu.me/+). All rights reserved.
 // Licensed under a Creative Commons Attribution 3.0 Unported License.
+
 #include <iostream>
 
 #include "C++.h"
@@ -11,18 +12,18 @@ using namespace std;
 SAMPLE_NS_BEGIN
 
 void HelloWorld::text(const String &str) {
-    text_ = str;
+    _text = str;
 }
 
 auto HelloWorld::text() const -> const String & {
-    return text_;
+    return _text;
 }
 
 size_t HelloWorld::count(char c) const {
     size_t cnt = 0;
 
     for (size_t i = 0, size = text_.size(); i < size; i++) {
-        if (c == text_[i]) {
+        if (c == _text[i]) {
             cnt++;
         }
     }
